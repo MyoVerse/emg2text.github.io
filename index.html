@@ -104,7 +104,7 @@
             <div class="publication-links">
               <!-- PDF Link (local file). -->
               <span class="link-block">
-                <a href="./static/pdfs/emg2speech.pdf"
+                <a href="./static/pdfs/emg2text.pdf"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                     <i class="fas fa-file-pdf"></i>
@@ -141,15 +141,20 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            We present a neuromuscular speech interface that translates electromyographic (EMG) signals recorded from orofacial muscles 
-            during speech articulation directly into audio. We find that self-supervised speech representations (SS) are strongly linearly 
-            related to the electrical power of muscle activity: a simple linear mapping predicts EMG power from SS with a correlation of 
-            <em>r</em> = 0.85. In addition, EMG power vectors associated with distinct articulatory gestures form structured, separable clusters. 
-            Together, these observations suggest that SS implicitly encode articulatory mechanisms, as reflected in EMG activity.
-            Leveraging this structure, we map EMG signals into the SS space and synthesize speech, enabling end-to-end EMG-to-speech generation 
-            without explicit articulatory modeling or vocoder training. We demonstrate this system with a participant with amyotrophic lateral sclerosis (ALS), 
-            converting orofacial EMG recorded while she <em>silently</em> articulated speech into audio.
+            We present a high-bandwidth, egocentric neuromuscular speech interface that translates silently voiced
+            articulations directly into text. We record surface electromyographic (EMG) signals from multiple
+            articulatory sites on the face and neck as participants <em>silently</em> articulate speech, enabling
+            direct EMG-to-text translation. Such an interface has the potential to restore communication for
+            individuals who have lost the ability to produce intelligible speech due to laryngectomy,
+            neuromuscular disease, stroke, or trauma-induced damage (e.g., radiotherapy toxicity) to the speech
+            articulators. Prior work has largely focused on mapping EMG collected during <em>audible</em>
+            articulation to time-aligned audio targets or transferring these targets to <em>silent</em> EMG
+            recordings, which inherently requires audio and limits applicability to patients who can no longer
+            speak. In contrast, we propose an efficient representation of high-dimensional EMG signals and
+            demonstrate direct sequence-to-sequence EMG-to-text conversion at the phonemic level without relying
+            on time-aligned audio.
           </p>
+
         </div>
       </div>
     </div>
@@ -177,259 +182,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-<section class="section formal-serif">
 
-  <div class="container is-max-desktop">
-    <h2 class="title is-3 has-text-centered">emg2speech demos with an ALS participant</h2>
-
-    <div class="carousel results-carousel">
-
-      <!-- Slide 1 -->
-      <div class="item">
-        <div class="box">
-          <h3 class="title is-5">The cushion feels tight again.</h3>
-
-          <video controls preload="metadata" playsinline style="width: 100%; border-radius: 12px;">
-            <source src="./static/audio/orofacial/1a.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-          </video>
-
-          <div style="margin-top: 12px;">
-            <audio controls preload="metadata" style="width: 100%;">
-              <source src="./static/audio/orofacial/1.wav" type="audio/wav">
-              Your browser does not support the audio element.
-            </audio>
-          </div>
-
-        </div>
-      </div>
-
-      <!-- Slide 2 -->
-      <div class="item">
-        <div class="box">
-          <h3 class="title is-5">The pillow feels tight today.</h3>
-
-          <video controls preload="metadata" playsinline style="width: 100%; border-radius: 12px;">
-            <source src="./static/audio/orofacial/2a.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-          </video>
-
-          <div style="margin-top: 12px;">
-            <audio controls preload="metadata" style="width: 100%;">
-              <source src="./static/audio/orofacial/2.wav" type="audio/wav">
-              Your browser does not support the audio element.
-            </audio>
-          </div>
-
-        </div>
-      </div>
-
-      <!-- Slide 3 -->
-      <div class="item">
-        <div class="box">
-          <h3 class="title is-5">My shoulder feels softer tonight.</h3>
-
-          <video controls preload="metadata" playsinline style="width: 100%; border-radius: 12px;">
-            <source src="./static/audio/orofacial/3a.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-          </video>
-
-          <div style="margin-top: 12px;">
-            <audio controls preload="metadata" style="width: 100%;">
-              <source src="./static/audio/orofacial/3.wav" type="audio/wav">
-              Your browser does not support the audio element.
-            </audio>
-          </div>
-        </div>
-      </div>
-
-      <!-- Slide 4 -->
-     <div class="item">
-        <div class="box">
-          <h3 class="title is-5">My wrist is calming now.</h3>
-
-          <video controls preload="metadata" playsinline style="width: 100%; border-radius: 12px;">
-            <source src="./static/audio/orofacial/4a.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-          </video>
-
-          <div style="margin-top: 12px;">
-            <audio controls preload="metadata" style="width: 100%;">
-              <source src="./static/audio/orofacial/4.wav" type="audio/wav">
-              Your browser does not support the audio element.
-            </audio>
-          </div>
-
-        </div>
-      </div>
-
-      <!-- Slide 5 -->
-      <div class="item">
-        <div class="box">
-          <h3 class="title is-5">My chest feels sore again.</h3>
-
-          <video controls preload="metadata" playsinline style="width: 100%; border-radius: 12px;">
-            <source src="./static/audio/orofacial/5a.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-          </video>
-
-          <div style="margin-top: 12px;">
-            <audio controls preload="metadata" style="width: 100%;">
-              <source src="./static/audio/orofacial/5.wav" type="audio/wav">
-              Your browser does not support the audio element.
-            </audio>
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </div>
-
-  <div style="max-width: 820px; margin: 14px auto 0;">
-  <p class="is-size-6 has-text-grey">
-    <strong>Note:</strong> The audio and video in these examples are not synchronized.
-    EMG-to-speech generation operates on discrete HuBERT units trained with CTC loss,
-    which do not preserve sample-accurate timing alignment or the original sample duration, even though the model is causal.
-  </p>
-</div>
-
-
-</section>
-
-
-<section class="section formal-serif">
-
-  <div class="container is-max-desktop">
-    <h2 class="title is-3 has-text-centered">emg2speech demos with a healthy participant</h2>
-
-    <div class="carousel results-carousel">
-
-      <!-- Slide 1 -->
-      <div class="item">
-        <div class="box">
-          <h3 class="title is-5">People find ways around.</h3>
-
-          <video controls preload="metadata" playsinline style="width: 100%; border-radius: 12px;">
-            <source src="./static/audio/orofacial/healthy/1B.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-          </video>
-
-          <div style="margin-top: 12px;">
-            <audio controls preload="metadata" style="width: 100%;">
-              <source src="./static/audio/orofacial/1B.wav" type="audio/wav">
-              Your browser does not support the audio element.
-            </audio>
-          </div>
-
-        </div>
-      </div>
-
-      <!-- Slide 2 -->
-      <div class="item">
-        <div class="box">
-          <h3 class="title is-5">You knock people down.</h3>
-
-          <video controls preload="metadata" playsinline style="width: 100%; border-radius: 12px;">
-            <source src="./static/audio/orofacial/healthy/2B.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-          </video>
-
-          <div style="margin-top: 12px;">
-            <audio controls preload="metadata" style="width: 100%;">
-              <source src="./static/audio/orofacial/2B.wav" type="audio/wav">
-              Your browser does not support the audio element.
-            </audio>
-          </div>
-
-        </div>
-      </div>
-
-      <!-- Slide 3 -->
-      <div class="item">
-        <div class="box">
-          <h3 class="title is-5">And then you sprinkle the cheese on top of that.</h3>
-
-          <video controls preload="metadata" playsinline style="width: 100%; border-radius: 12px;">
-            <source src="./static/audio/orofacial/healthy/3B.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-          </video>
-
-          <div style="margin-top: 12px;">
-            <audio controls preload="metadata" style="width: 100%;">
-              <source src="./static/audio/orofacial/3B.wav" type="audio/wav">
-              Your browser does not support the audio element.
-            </audio>
-          </div>
-        </div>
-      </div>
-
-      <!-- Slide 4 -->
-     <div class="item">
-        <div class="box">
-          <h3 class="title is-5">I make that once in a while.</h3>
-
-          <video controls preload="metadata" playsinline style="width: 100%; border-radius: 12px;">
-            <source src="./static/audio/orofacial/healthy/4B.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-          </video>
-
-          <div style="margin-top: 12px;">
-            <audio controls preload="metadata" style="width: 100%;">
-              <source src="./static/audio/orofacial/4B.wav" type="audio/wav">
-              Your browser does not support the audio element.
-            </audio>
-          </div>
-
-        </div>
-      </div>
-
-      <!-- Slide 5 -->
-      <div class="item">
-        <div class="box">
-          <h3 class="title is-5">I don't have a lot of time.</h3>
-
-          <video controls preload="metadata" playsinline style="width: 100%; border-radius: 12px;">
-            <source src="./static/audio/orofacial/healthy/5B.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-          </video>
-
-          <div style="margin-top: 12px;">
-            <audio controls preload="metadata" style="width: 100%;">
-              <source src="./static/audio/orofacial/5B.wav" type="audio/wav">
-              Your browser does not support the audio element.
-            </audio>
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </div>
-
-  <div style="max-width: 820px; margin: 14px auto 0;">
-  <p class="is-size-6 has-text-grey">
-    <strong>Note:</strong> The audio and video in these examples are not synchronized.
-    EMG-to-speech generation operates on discrete HuBERT units trained with CTC loss,
-    which do not preserve sample-accurate timing alignment or the original sample duration, even though the model is causal.
-  </p>
-</div>
-
-
-</section>
-
-
-<section class="section formal-serif">
-  <div class="container is-max-desktop">
-
-    <h3 class="title is-4" style="font-family: inherit;">All human transcriptions</h3>
-    <p>
-      <a href="./static/pdfs/allTranscripts.html">Preview in browser</a>
-      &nbsp;·&nbsp;
-      <a href="./static/pdfs/allTranscripts.xlsx" download>Download XLSX</a>
-    </p>
-
-
-  </div>
-</section>
 
 
 
@@ -437,7 +190,7 @@ document.addEventListener('DOMContentLoaded', () => {
   <div class="container">
     <div class="content has-text-centered">
       <a class="icon-link"
-         href="./static/pdfs/emg2speech.pdf">
+         href="./static/pdfs/emg2text.pdf">
         <i class="fas fa-file-pdf"></i>
       </a>
       <a class="icon-link" href="https://github.com/keunhong" class="external-link" disabled>
