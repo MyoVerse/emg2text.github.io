@@ -35,9 +35,8 @@
   <script src="./static/js/bulma-slider.min.js"></script>
   <script src="./static/js/index.js"></script>
 
-  <!-- Page-local styles for the transcription examples (colors preserved) -->
+  <!-- Page-local styles for the transcription examples (ok to keep here) -->
   <style>
-    /* Keep the examples readable and consistent with Bulma */
     .transcriptions .box { margin-bottom: 14px; }
     .transcriptions .line { margin: 6px 0; }
     .transcriptions .muted { opacity: 0.7; font-size: 0.95em; }
@@ -51,9 +50,8 @@
       overflow-wrap: anywhere;
     }
 
-    /* Colors matching your LaTeX intent */
     .c-blue   { color: #1f4fff; }
-    .c-green  { color: #1b7a2e; }  /* green!30!black-ish */
+    .c-green  { color: #1b7a2e; }
     .c-purple { color: #6a2cff; }
     .c-orange { color: #c96a00; }
     .c-gray   { color: #808080; }
@@ -64,7 +62,6 @@
     .tag-purple { background: rgba(130, 60, 255, 0.12); color: #6a2cff; border: 1px solid rgba(130,60,255,0.25); }
     .tag-orange { background: rgba(255, 140, 0, 0.12);  color: #c96a00; border: 1px solid rgba(255,140,0,0.25); }
 
-    /* Responsive two-column layout for examples */
     .examples-grid {
       display: grid;
       grid-template-columns: 1fr;
@@ -99,11 +96,13 @@
   </div>
 </nav>
 
+<!-- Hero -->
 <section class="hero">
   <div class="hero-body">
     <div class="container is-max-desktop">
       <div class="columns is-centered">
         <div class="column has-text-centered">
+
           <h1 class="title is-1 publication-title">
             Non-invasive electromyographic speech neuroprosthesis: a geometric perspective
           </h1>
@@ -116,26 +115,24 @@
             <span class="author-block"><sup>1</sup>Anonymous</span>
           </div>
 
-          <div class="column has-text-centered">
-            <div class="publication-links">
+          <div class="publication-links" style="margin-top: 1rem;">
 
-              <span class="link-block">
-                <a href="./static/pdfs/emg2text.pdf"
-                   class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon"><i class="fas fa-file-pdf"></i></span>
-                  <span>Paper</span>
-                </a>
-              </span>
+            <span class="link-block">
+              <a href="./static/pdfs/emg2text.pdf"
+                 class="external-link button is-normal is-rounded is-dark">
+                <span class="icon"><i class="fas fa-file-pdf"></i></span>
+                <span>Paper</span>
+              </a>
+            </span>
 
-              <span class="link-block">
-                <a href="https://github.com/MyoVerse/emg2text"
-                   class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon"><i class="fab fa-github"></i></span>
-                  <span>Code</span>
-                </a>
-              </span>
+            <span class="link-block">
+              <a href="https://github.com/MyoVerse/emg2text"
+                 class="external-link button is-normal is-rounded is-dark">
+                <span class="icon"><i class="fab fa-github"></i></span>
+                <span>Code</span>
+              </a>
+            </span>
 
-            </div>
           </div>
 
         </div>
@@ -144,10 +141,9 @@
   </div>
 </section>
 
+<!-- Abstract -->
 <section class="section">
   <div class="container is-max-desktop">
-
-    <!-- Abstract -->
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
         <h2 class="title is-3">Abstract</h2>
@@ -167,81 +163,79 @@
             on time-aligned audio.
           </p>
         </div>
+
         <p>
           For direct EMG-to-speech conversion (i.e., EMG → audio), see
           <a href="https://myoverse.github.io/" target="_blank" rel="noopener">our EMG-to-speech demo</a>.
         </p>
       </div>
     </div>
-    <!-- /Abstract -->
-
   </div>
 </section>
 
+<!-- emg2qwerty results -->
 <section class="section" id="emg2qwerty-results">
   <div class="container is-max-desktop">
+    <div class="results-center">
 
-    <h2 class="title is-4">Results on <span class="sc">emg2qwerty</span></h2>
+      <h2 class="title is-4">
+        Results on <span class="sc">emg2qwerty</span>
+      </h2>
 
-    <p class="content">
-      Comparison between our method and <span class="sc">emg2qwerty</span> baselines (avg. over 8 subjects).
-      Lower CER is better; improvement is statistically significant (<em>p</em> &lt; 0.015). LM: language model.
-    </p>
+      <p class="content results-caption">
+        Comparison between our method and <span class="sc">emg2qwerty</span> baselines (avg. over 8 subjects).
+        Lower CER is better; improvement is statistically significant (<em>p</em> &lt; 0.015). LM: language model.
+      </p>
 
-    <div class="table-wrap">
-      <table class="simple-table">
-        <thead>
-          <tr>
-            <th>Model</th>
-            <th>No LM (Val)</th>
-            <th>No LM (Test)</th>
-            <th>6-gram LM (Val)</th>
-            <th>6-gram LM (Test)</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Baseline (spectrogram) — <span class="sc">emg2qwerty</span></td>
-            <td>15.65 ± 5.95</td>
-            <td>15.38 ± 5.88</td>
-            <td>11.03 ± 4.45</td>
-            <td>9.55 ± 5.16</td>
-          </tr>
-          <tr>
-            <td>Matrices σ(τ) (ours)</td>
-            <td><strong>14.33 ± 5.27</strong></td>
-            <td><strong>14.03 ± 5.27</strong></td>
-            <td><strong>9.61 ± 3.84</strong></td>
-            <td><strong>7.95 ± 4.54</strong></td>
-          </tr>
-        </tbody>
-      </table>
+      <div class="table-wrap">
+        <table class="simple-table">
+          <thead>
+            <tr>
+              <th>Model</th>
+              <th>No LM (Val)</th>
+              <th>No LM (Test)</th>
+              <th>6-gram LM (Val)</th>
+              <th>6-gram LM (Test)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Baseline (spectrogram) — <span class="sc">emg2qwerty</span></td>
+              <td>15.65 ± 5.95</td>
+              <td>15.38 ± 5.88</td>
+              <td>11.03 ± 4.45</td>
+              <td>9.55 ± 5.16</td>
+            </tr>
+            <tr>
+              <td>Matrices σ(τ) (ours)</td>
+              <td><strong>14.33 ± 5.27</strong></td>
+              <td><strong>14.03 ± 5.27</strong></td>
+              <td><strong>9.61 ± 3.84</strong></td>
+              <td><strong>7.95 ± 4.54</strong></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="results-figrow">
+        <figure class="results-fig">
+          <img src="./static/images/testCER-NoLM.png" alt="Test CER without LM">
+        </figure>
+        <figure class="results-fig">
+          <img src="./static/images/testCER-LM.png" alt="Test CER with 6-gram LM">
+        </figure>
+      </div>
+
+      <p class="content results-caption" style="margin-top: 0.75rem;">
+        Each dot represents an individual test subject; lines connect within-subject results across models.
+        Our method improves performance for all subjects except <span class="sc">user6</span>.
+      </p>
+
     </div>
-
   </div>
 </section>
 
-<div class="columns is-variable is-4 is-multiline" style="margin-top: 1rem;">
-  <div class="column is-6">
-    <figure class="image">
-      <img src="./static/pdfs/testCER-NoLM.png" alt="Test CER without LM">
-    </figure>
-  </div>
-  <div class="column is-6">
-    <figure class="image">
-      <img src="./static/pdfs/testCER-LM.png" alt="Test CER with 6-gram LM">
-    </figure>
-  </div>
-</div>
-
-<p class="content" style="margin-top: 0.75rem;">
-  Each dot represents an individual test subject; lines connect within-subject results across models.
-  Our method improves performance for all subjects except <span class="sc">user6</span>.
-</p>
-
-
-
-
+<!-- Transcription examples -->
 <section class="section">
   <div class="container is-max-desktop">
     <h2 class="title is-3 has-text-centered">Transcription examples</h2>
@@ -261,7 +255,6 @@
     </p>
   </div>
 </section>
-
 
 <footer class="footer">
   <div class="container">
