@@ -173,6 +173,83 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+<section class="section">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3 has-text-centered">Examples of EMG-to-phoneme translations</h2>
+
+    <div class="content">
+      <p>
+        We translate using EMG collected during <em>silent</em> articulations (<span class="mono">E<sub>S</sub></span>)
+        with CTC loss, without using time-aligned <em>audio</em> (<span class="mono">A</span>) or EMG from
+        <em>audible</em> articulation (<span class="mono">E<sub>A</sub></span>).
+      </p>
+
+      <p class="legend">
+        <span class="tag tag-blue">Ground-truth sentence</span>
+        <span class="tag tag-green">Ground-truth phonemes</span>
+        <span class="tag tag-purple">Decoded phonemes</span>
+        <span class="tag tag-orange">Decoded sentence</span>
+      </p>
+    </div>
+
+    <h3 class="title is-4">Top-3 (best)</h3>
+
+    <div class="examples-grid">
+      <!-- Example 1 -->
+      <div class="box example-card">
+        <div class="line blue"><strong>It Was Paid For</strong> <span class="muted">(t-start … t-end)</span></div>
+        <div class="line green mono">ih-t ␠ w-aa-z ␠ p-ey-d ␠ f-ao-r</div>
+        <div class="line purple mono">ih-t ␠ w-aa-z ␠ p-ey-t ␠ f-ao-r</div>
+        <div class="line orange"><strong>It Was Pay For</strong></div>
+      </div>
+
+      <!-- Example 2 -->
+      <div class="box example-card">
+        <div class="line blue"><strong>It's A Community Center</strong> <span class="muted">(t-start … t-end)</span></div>
+        <div class="line green mono">ih-t-s ␠ ah ␠ k-ah-m-y-uw-n-ah-t-iy ␠ s-eh-n-t-er</div>
+        <div class="line purple mono">ih-t-s ␠ ah ␠ k-ah-m-y-uw-n-ih-t-iy ␠ s-eh-n-t-er-n</div>
+        <div class="line orange"><strong>It's A Community Center</strong></div>
+      </div>
+
+      <!-- Example 3 -->
+      <div class="box example-card">
+        <div class="line blue"><strong>Just All Different Colors</strong> <span class="muted">(t-start … t-end)</span></div>
+        <div class="line green mono">j-ah-s-t ␠ ao-l ␠ d-ih-f-er-ah-n-t ␠ k-ah-l-er-z</div>
+        <div class="line purple mono">j-ah-s-t ␠ ao-l ␠ d-ih-f-er-ah-n ␠ ␠ k-ih-l-er-z</div>
+        <div class="line orange"><strong>Just All Different Colors</strong></div>
+      </div>
+    </div>
+
+    <h3 class="title is-4" style="margin-top: 1.25rem;">Bottom-3 (worst)</h3>
+
+    <div class="examples-grid">
+      <!-- Example 4 -->
+      <div class="box example-card">
+        <div class="line blue"><strong>The Death Penalty</strong> <span class="muted">(t-start … t-end)</span></div>
+        <div class="line green mono">dh-ah ␠ d-eh-th ␠ p-eh-n-ah-l-t-iy</div>
+        <div class="line purple mono">ih ␠ dh-ih-t ␠ ih-k ␠ p-ay ␠ ae-k</div>
+        <div class="line orange"><strong>That Thick My Back</strong></div>
+      </div>
+
+      <!-- Example 5 -->
+      <div class="box example-card">
+        <div class="line blue"><strong>He Does The Yard</strong> <span class="muted">(t-start … t-end)</span></div>
+        <div class="line green mono">hh-iy ␠ d-ah-z ␠ dh-ah ␠ y-aa-r-d</div>
+        <div class="line purple mono">ih-ih-t ␠ ih-s ␠ n-ih-n-t ␠ ay-t</div>
+        <div class="line orange"><strong>It Its Knit Might</strong></div>
+      </div>
+
+      <!-- Example 6 -->
+      <div class="box example-card">
+        <div class="line blue"><strong>That's Awful</strong> <span class="muted">(t-start … t-end)</span></div>
+        <div class="line green mono">th-ae-t-s ␠ aa-f-ah-l</div>
+        <div class="line purple mono" style="opacity: 0.65;">dh-eh-r ␠ ah ␠ t-oy-t</div>
+        <div class="line orange"><strong>There A Point</strong></div>
+      </div>
+    </div>
+
+  </div>
+</section>
 
 
 
