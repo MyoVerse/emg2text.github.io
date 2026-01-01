@@ -178,6 +178,85 @@
   </div>
 </section>
 
+<!-- emg2qwerty comparison table -->
+<section class="section" id="emg2qwerty-table">
+  <div class="container is-max-desktop">
+    <h2 class="title is-4">Comparison on <span class="sc">emg2qwerty</span></h2>
+
+    <div class="table-wrap">
+      <table class="qwerty-table">
+        <caption>
+          Comparison between our proposed methods and those presented by
+          <span class="sc">emg2qwerty</span>, with all results averaged over 8 subjects.
+          Parameter size and FLOPs are identical across all the models. Lower CER is better.
+          The CER improvement arising from our method is statistically significant (<em>p</em> &lt; 0.015).
+          LM: language model.
+        </caption>
+
+        <thead>
+          <tr>
+            <th rowspan="2"></th>
+            <th class="group" colspan="2">No LM</th>
+            <th class="group" colspan="2">6-gram char-LM</th>
+          </tr>
+          <tr>
+            <th>Val CER (%↓)</th>
+            <th>Test CER (%↓)</th>
+            <th>Val CER (%↓)</th>
+            <th>Test CER (%↓)</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr>
+            <td>
+              <div class="row-title sc">Baseline (spectrogram)</div>
+              <div class="row-sub sc">emg2qwerty</div>
+            </td>
+            <td>15.65 &plusmn; 5.95</td>
+            <td>15.38 &plusmn; 5.88</td>
+            <td>11.03 &plusmn; 4.45</td>
+            <td>9.55 &plusmn; 5.16</td>
+          </tr>
+
+          <tr class="divider">
+            <td>
+              <div class="row-title">Matrices <span class="math">&sigma;(&tau;)</span> (ours)</div>
+            </td>
+            <td><strong>14.33 &plusmn; 5.27</strong></td>
+            <td><strong>14.03 &plusmn; 5.27</strong></td>
+            <td><strong>9.61 &plusmn; 3.84</strong></td>
+            <td><strong>7.95 &plusmn; 4.54</strong></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- Results: emg2qwerty comparison -->
+<section class="section" id="emg2qwerty-results">
+
+    <!-- Figure (two panels) -->
+    <div class="columns is-variable is-4 is-multiline">
+      <div class="column is-6">
+        <figure class="image">
+          <embed src="./static/pdfs/testCER-NoLM.pdf" type="application/pdf" width="100%" height="420px" />
+        </figure>
+      </div>
+      <div class="column is-6">
+        <figure class="image">
+          <embed src="./static/pdfs/testCER-LM.pdf" type="application/pdf" width="100%" height="420px" />
+        </figure>
+      </div>
+    </div>
+
+    <p class="content" style="margin-top: 0.75rem;">
+      Each dot represents an individual test subject, with connecting lines indicating within-subject performance across different models. Our method improves performance for all subjects except <span style="font-variant: small-caps;">user6</span>.
+    </p>
+
+  </div>
+</section>
 
 
 

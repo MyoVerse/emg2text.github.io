@@ -212,3 +212,63 @@ section.formal-serif * {
 #interpolation-image-wrapper img {
   border-radius: 5px;
 }
+
+
+/* Small-caps helper */
+.sc { font-variant: small-caps; }
+
+/* Optional: math-ish styling */
+.math { font-family: "Times New Roman", Times, serif; }
+
+/* Table styling */
+.table-wrap { overflow-x: auto; }
+
+.qwerty-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 0.75rem;
+  font-size: 0.95rem;
+}
+
+.qwerty-table caption {
+  caption-side: top;
+  text-align: left;
+  margin-bottom: 0.6rem;
+  font-size: 0.95rem;
+}
+
+.qwerty-table th,
+.qwerty-table td {
+  padding: 10px 12px;
+  vertical-align: middle;
+  border-top: 1px solid #ddd;
+}
+
+.qwerty-table thead th {
+  border-top: 2px solid #111;
+}
+
+.qwerty-table tbody tr:last-child td {
+  border-bottom: 2px solid #111;
+}
+
+.qwerty-table th.group {
+  text-align: center;
+}
+
+.qwerty-table td:first-child {
+  width: 42%;
+}
+
+.qwerty-table td:not(:first-child),
+.qwerty-table th:not(:first-child) {
+  text-align: center;
+  white-space: nowrap;
+}
+
+.qwerty-table .row-title { line-height: 1.2; }
+.qwerty-table .row-sub { font-size: 0.9em; opacity: 0.85; margin-top: 2px; }
+
+.qwerty-table tr.divider td {
+  border-top: 1.5px solid #111;
+}
