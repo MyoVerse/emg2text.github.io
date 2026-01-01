@@ -174,84 +174,26 @@
   </div>
 </section>
 
-<!-- Transcription Examples (web-friendly conversion of your LaTeX table) -->
-<section class="section transcriptions">
+<section class="section">
   <div class="container is-max-desktop">
-    <div class="columns is-centered">
-      <div class="column is-four-fifths">
+    <h2 class="title is-3 has-text-centered">Transcription examples</h2>
 
-        <h2 class="title is-3 has-text-centered">Transcription examples</h2>
-
-        <div class="content">
-          <p>
-            Examples of EMG-to-phoneme sequence translations. We translate using EMG collected during
-            <em>silent</em> articulations (<span class="mono">E<sub>S</sub></span>) with CTC loss, without using
-            time-aligned <em>audio</em> (<span class="mono">A</span>) or EMG collected during <em>audible</em>
-            articulation (<span class="mono">E<sub>A</sub></span>).
-          </p>
-
-          <p class="legend">
-            <span class="tag tag-blue">Ground-truth sentence (t-start … t-end)</span>
-            <span class="tag tag-green">Ground-truth phonemes</span>
-            <span class="tag tag-purple">Decoded phonemes</span>
-            <span class="tag tag-orange">Decoded sentence</span>
-          </p>
-        </div>
-
-        <h3 class="title is-4">Top-3 (best) transcribed sentences</h3>
-
-        <div class="examples-grid">
-          <div class="box">
-            <div class="line c-blue"><strong>It Was Paid For</strong> <span class="muted">(t-start … t-end)</span></div>
-            <div class="line c-green mono">ih-t ␠ w-aa-z ␠ p-ey-d ␠ f-ao-r</div>
-            <div class="line c-purple mono">ih-t ␠ w-aa-z ␠ p-ey-t ␠ f-ao-r</div>
-            <div class="line c-orange"><strong>It Was Pay For</strong></div>
-          </div>
-
-          <div class="box">
-            <div class="line c-blue"><strong>It's A Community Center</strong> <span class="muted">(t-start … t-end)</span></div>
-            <div class="line c-green mono">ih-t-s ␠ ah ␠ k-ah-m-y-uw-n-ah-t-iy ␠ s-eh-n-t-er</div>
-            <div class="line c-purple mono">ih-t-s ␠ ah ␠ k-ah-m-y-uw-n-ih-t-iy ␠ s-eh-n-t-er-n</div>
-            <div class="line c-orange"><strong>It's A Community Center</strong></div>
-          </div>
-
-          <div class="box">
-            <div class="line c-blue"><strong>Just All Different Colors</strong> <span class="muted">(t-start … t-end)</span></div>
-            <div class="line c-green mono">j-ah-s-t ␠ ao-l ␠ d-ih-f-er-ah-n-t ␠ k-ah-l-er-z</div>
-            <div class="line c-purple mono">j-ah-s-t ␠ ao-l ␠ d-ih-f-er-ah-n ␠ ␠ k-ih-l-er-z</div>
-            <div class="line c-orange"><strong>Just All Different Colors</strong></div>
-          </div>
-        </div>
-
-        <h3 class="title is-4" style="margin-top: 1.25rem;">Bottom-3 (worst) transcribed sentences</h3>
-
-        <div class="examples-grid">
-          <div class="box">
-            <div class="line c-blue"><strong>The Death Penalty</strong> <span class="muted">(t-start … t-end)</span></div>
-            <div class="line c-green mono">dh-ah ␠ d-eh-th ␠ p-eh-n-ah-l-t-iy</div>
-            <div class="line c-purple mono">ih ␠ dh-ih-t ␠ ih-k ␠ p-ay ␠ ae-k</div>
-            <div class="line c-orange"><strong>That Thick My Back</strong></div>
-          </div>
-
-          <div class="box">
-            <div class="line c-blue"><strong>He Does The Yard</strong> <span class="muted">(t-start … t-end)</span></div>
-            <div class="line c-green mono">hh-iy ␠ d-ah-z ␠ dh-ah ␠ y-aa-r-d</div>
-            <div class="line c-purple mono">ih-ih-t ␠ ih-s ␠ n-ih-n-t ␠ ay-t</div>
-            <div class="line c-orange"><strong>It Its Knit Might</strong></div>
-          </div>
-
-          <div class="box">
-            <div class="line c-blue"><strong>That's Awful</strong> <span class="muted">(t-start … t-end)</span></div>
-            <div class="line c-green mono">th-ae-t-s ␠ aa-f-ah-l</div>
-            <div class="line c-gray mono">dh-eh-r ␠ ah ␠ t-oy-t</div>
-            <div class="line c-orange"><strong>There A Point</strong></div>
-          </div>
-        </div>
-
-      </div>
+    <div style="border: 1px solid #ddd; border-radius: 10px; overflow: hidden;">
+      <iframe
+        src="./static/pdfs/table.pdf#view=FitH"
+        width="100%"
+        height="900"
+        style="border: 0;"
+        loading="lazy">
+      </iframe>
     </div>
+
+    <p class="has-text-centered" style="margin-top: 10px;">
+      <a href="./static/pdfs/table.pdf" target="_blank" rel="noopener">Open PDF in a new tab</a>
+    </p>
   </div>
 </section>
+
 
 <footer class="footer">
   <div class="container">
