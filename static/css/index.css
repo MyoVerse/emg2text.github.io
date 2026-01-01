@@ -281,9 +281,9 @@ section.formal-serif * {
 }
 
 #emg2qwerty-results .results-fig {
-  width: min(160px, 80vw);  /* smaller panels */
-  margin: 0;
+  width: min(260px, 80vw);
 }
+
 
 #emg2qwerty-results .results-fig img {
   width: 100%;
