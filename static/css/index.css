@@ -294,3 +294,17 @@ section.formal-serif * {
   margin-right: auto;
 }
 
+
+/* Force grid lines for the emg2qwerty table (override Bulma) */
+#emg2qwerty-results table.simple-table {
+  border-collapse: collapse !important;
+  border-spacing: 0 !important;
+  border: 2px solid #bdbdbd !important;
+}
+
+#emg2qwerty-results table.simple-table th,
+#emg2qwerty-results table.simple-table td {
+  border: 2px solid #bdbdbd !important;
+  padding: 10px 12px !important;
+}
+
