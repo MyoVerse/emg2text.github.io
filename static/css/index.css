@@ -281,7 +281,7 @@ section.formal-serif * {
 }
 
 #emg2qwerty-results .results-fig {
-  width: min(360px, 92vw);  /* smaller panels */
+  width: min(160px, 80vw);  /* smaller panels */
   margin: 0;
 }
 
