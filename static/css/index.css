@@ -163,3 +163,35 @@ section.formal-serif * {
 }
 
 
+/* Table-as-cards styling (keeps colors, reads well on mobile) */
+.examples-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 14px;
+}
+
+@media (min-width: 900px) {
+  .examples-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.example-card .line { margin: 6px 0; }
+.example-card .muted { opacity: 0.7; font-size: 0.95em; }
+
+.mono {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+               "Liberation Mono", "Courier New", monospace;
+}
+
+.tag-blue   { background: rgba(0, 102, 255, 0.12); color: #1f4fff; border: 1px solid rgba(0,102,255,0.25); }
+.tag-green  { background: rgba(0, 160, 60, 0.12);  color: #1b7a2e; border: 1px solid rgba(0,160,60,0.25); }
+.tag-purple { background: rgba(130, 60, 255, 0.12); color: #6a2cff; border: 1px solid rgba(130,60,255,0.25); }
+.tag-orange { background: rgba(255, 140, 0, 0.12);  color: #c96a00; border: 1px solid rgba(255,140,0,0.25); }
+
+.blue { color: #1f4fff; }
+.green { color: #1b7a2e; }
+.purple { color: #6a2cff; }
+.orange { color: #c96a00; }
+
+.legend .tag { margin-right: 8px; margin-bottom: 6px; }
