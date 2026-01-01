@@ -3,8 +3,7 @@
 <head>
   <meta charset="utf-8">
 
-  <meta name="description"
-        content="Non-invasive electromyographic speech neuroprosthesis: a geometric perspective.">
+  <meta name="description" content="Non-invasive electromyographic speech neuroprosthesis: a geometric perspective.">
   <meta name="keywords" content="EMG, silent speech, neuromuscular interface, EMG-to-text, CTC, phonemes">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -26,7 +25,7 @@
   <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
   <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
-  <link rel="stylesheet" href="./static/css/index.css?v=4">
+  <link rel="stylesheet" href="./static/css/index.css?v=5">
 
   <link rel="icon" href="./static/images/brain.svg">
 
@@ -35,6 +34,46 @@
   <script src="./static/js/bulma-carousel.min.js"></script>
   <script src="./static/js/bulma-slider.min.js"></script>
   <script src="./static/js/index.js"></script>
+
+  <!-- Page-local styles for the transcription examples (colors preserved) -->
+  <style>
+    /* Keep the examples readable and consistent with Bulma */
+    .transcriptions .box { margin-bottom: 14px; }
+    .transcriptions .line { margin: 6px 0; }
+    .transcriptions .muted { opacity: 0.7; font-size: 0.95em; }
+
+    .mono {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+                   "Liberation Mono", "Courier New", monospace;
+      font-size: 0.98rem;
+      line-height: 1.35;
+      white-space: normal;
+      overflow-wrap: anywhere;
+    }
+
+    /* Colors matching your LaTeX intent */
+    .c-blue   { color: #1f4fff; }
+    .c-green  { color: #1b7a2e; }  /* green!30!black-ish */
+    .c-purple { color: #6a2cff; }
+    .c-orange { color: #c96a00; }
+    .c-gray   { color: #808080; }
+
+    .legend .tag { margin-right: 8px; margin-bottom: 6px; }
+    .tag-blue   { background: rgba(0, 102, 255, 0.12); color: #1f4fff; border: 1px solid rgba(0,102,255,0.25); }
+    .tag-green  { background: rgba(0, 160, 60, 0.12);  color: #1b7a2e; border: 1px solid rgba(0,160,60,0.25); }
+    .tag-purple { background: rgba(130, 60, 255, 0.12); color: #6a2cff; border: 1px solid rgba(130,60,255,0.25); }
+    .tag-orange { background: rgba(255, 140, 0, 0.12);  color: #c96a00; border: 1px solid rgba(255,140,0,0.25); }
+
+    /* Responsive two-column layout for examples */
+    .examples-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 14px;
+    }
+    @media (min-width: 900px) {
+      .examples-grid { grid-template-columns: 1fr 1fr; }
+    }
+  </style>
 </head>
 
 <body>
@@ -80,7 +119,6 @@
           <div class="column has-text-centered">
             <div class="publication-links">
 
-              <!-- PDF Link (local file). -->
               <span class="link-block">
                 <a href="./static/pdfs/emg2text.pdf"
                    class="external-link button is-normal is-rounded is-dark">
@@ -89,7 +127,6 @@
                 </a>
               </span>
 
-              <!-- Code Link. -->
               <span class="link-block">
                 <a href="https://github.com/google/nerfies"
                    class="external-link button is-normal is-rounded is-dark">
@@ -134,6 +171,85 @@
     </div>
     <!-- /Abstract -->
 
+  </div>
+</section>
+
+<!-- Transcription Examples (web-friendly conversion of your LaTeX table) -->
+<section class="section transcriptions">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column is-four-fifths">
+
+        <h2 class="title is-3 has-text-centered">Transcription examples</h2>
+
+        <div class="content">
+          <p>
+            Examples of EMG-to-phoneme sequence translations. We translate using EMG collected during
+            <em>silent</em> articulations (<span class="mono">E<sub>S</sub></span>) with CTC loss, without using
+            time-aligned <em>audio</em> (<span class="mono">A</span>) or EMG collected during <em>audible</em>
+            articulation (<span class="mono">E<sub>A</sub></span>).
+          </p>
+
+          <p class="legend">
+            <span class="tag tag-blue">Ground-truth sentence (t-start … t-end)</span>
+            <span class="tag tag-green">Ground-truth phonemes</span>
+            <span class="tag tag-purple">Decoded phonemes</span>
+            <span class="tag tag-orange">Decoded sentence</span>
+          </p>
+        </div>
+
+        <h3 class="title is-4">Top-3 (best) transcribed sentences</h3>
+
+        <div class="examples-grid">
+          <div class="box">
+            <div class="line c-blue"><strong>It Was Paid For</strong> <span class="muted">(t-start … t-end)</span></div>
+            <div class="line c-green mono">ih-t ␠ w-aa-z ␠ p-ey-d ␠ f-ao-r</div>
+            <div class="line c-purple mono">ih-t ␠ w-aa-z ␠ p-ey-t ␠ f-ao-r</div>
+            <div class="line c-orange"><strong>It Was Pay For</strong></div>
+          </div>
+
+          <div class="box">
+            <div class="line c-blue"><strong>It's A Community Center</strong> <span class="muted">(t-start … t-end)</span></div>
+            <div class="line c-green mono">ih-t-s ␠ ah ␠ k-ah-m-y-uw-n-ah-t-iy ␠ s-eh-n-t-er</div>
+            <div class="line c-purple mono">ih-t-s ␠ ah ␠ k-ah-m-y-uw-n-ih-t-iy ␠ s-eh-n-t-er-n</div>
+            <div class="line c-orange"><strong>It's A Community Center</strong></div>
+          </div>
+
+          <div class="box">
+            <div class="line c-blue"><strong>Just All Different Colors</strong> <span class="muted">(t-start … t-end)</span></div>
+            <div class="line c-green mono">j-ah-s-t ␠ ao-l ␠ d-ih-f-er-ah-n-t ␠ k-ah-l-er-z</div>
+            <div class="line c-purple mono">j-ah-s-t ␠ ao-l ␠ d-ih-f-er-ah-n ␠ ␠ k-ih-l-er-z</div>
+            <div class="line c-orange"><strong>Just All Different Colors</strong></div>
+          </div>
+        </div>
+
+        <h3 class="title is-4" style="margin-top: 1.25rem;">Bottom-3 (worst) transcribed sentences</h3>
+
+        <div class="examples-grid">
+          <div class="box">
+            <div class="line c-blue"><strong>The Death Penalty</strong> <span class="muted">(t-start … t-end)</span></div>
+            <div class="line c-green mono">dh-ah ␠ d-eh-th ␠ p-eh-n-ah-l-t-iy</div>
+            <div class="line c-purple mono">ih ␠ dh-ih-t ␠ ih-k ␠ p-ay ␠ ae-k</div>
+            <div class="line c-orange"><strong>That Thick My Back</strong></div>
+          </div>
+
+          <div class="box">
+            <div class="line c-blue"><strong>He Does The Yard</strong> <span class="muted">(t-start … t-end)</span></div>
+            <div class="line c-green mono">hh-iy ␠ d-ah-z ␠ dh-ah ␠ y-aa-r-d</div>
+            <div class="line c-purple mono">ih-ih-t ␠ ih-s ␠ n-ih-n-t ␠ ay-t</div>
+            <div class="line c-orange"><strong>It Its Knit Might</strong></div>
+          </div>
+
+          <div class="box">
+            <div class="line c-blue"><strong>That's Awful</strong> <span class="muted">(t-start … t-end)</span></div>
+            <div class="line c-green mono">th-ae-t-s ␠ aa-f-ah-l</div>
+            <div class="line c-gray mono">dh-eh-r ␠ ah ␠ t-oy-t</div>
+            <div class="line c-orange"><strong>There A Point</strong></div>
+          </div>
+        </div>
+
+      </div>
+    </div>
   </div>
 </section>
 
