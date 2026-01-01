@@ -214,85 +214,52 @@ section.formal-serif * {
   border-radius: 5px;
 }
 
-/* ============================
-   emg2qwerty results block
-============================ */
-
-/* Center everything in this block */
-#emg2qwerty-results .results-center {
-  text-align: center;
+/* Center the whole emg2qwerty results block */
+#emg2qwerty-results .results-center{
+  max-width: 920px;          /* controls total block width */
+  margin: 0 auto;            /* centers the block */
+  text-align: center;        /* center headings + captions */
 }
 
-/* Keep text from spanning too wide */
-#emg2qwerty-results .results-caption {
-  max-width: 900px;
+/* Center the table itself (and keep it neat) */
+#emg2qwerty-results .table-wrap{
+  display: flex;
+  justify-content: center;
+}
+
+#emg2qwerty-results .simple-table{
+  width: 100%;
+  max-width: 860px;          /* table width inside the centered block */
+  margin: 0 auto;
+}
+
+/* Make the figure row a centered flex row */
+#emg2qwerty-results .results-figrow{
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 16px;
+  flex-wrap: wrap;           /* wraps on small screens */
+  margin-top: 12px;
+}
+
+/* Make images smaller */
+#emg2qwerty-results .results-fig{
+  margin: 0;
+}
+
+#emg2qwerty-results .results-fig img{
+  display: block;
+  width: 320px;              /* << smaller size */
+  max-width: 42vw;           /* responsive cap */
+  height: auto;
+  border-radius: 8px;
+}
+
+/* Optional: keep the caption text nicely centered and constrained */
+#emg2qwerty-results .results-caption{
+  max-width: 860px;
   margin-left: auto;
   margin-right: auto;
 }
 
-/* Proper grid table */
-#emg2qwerty-results .table-wrap {
-  overflow-x: auto;
-  margin-top: 0.75rem;
-}
-
-#emg2qwerty-results .simple-table {
-  margin: 0.75rem auto 0 auto;
-  width: min(980px, 100%);
-  border-collapse: collapse;
-  border: 2px solid #111;    /* outer border */
-  background: #fff;
-  font-size: 0.95rem;
-  text-align: left;          /* model column reads better left-aligned */
-}
-
-#emg2qwerty-results .simple-table th,
-#emg2qwerty-results .simple-table td {
-  border: 1px solid #111;    /* full grid lines */
-  padding: 12px 14px;
-  vertical-align: middle;
-}
-
-/* header emphasis */
-#emg2qwerty-results .simple-table thead th {
-  font-weight: 700;
-}
-
-/* numeric columns centered */
-#emg2qwerty-results .simple-table th:not(:first-child),
-#emg2qwerty-results .simple-table td:not(:first-child) {
-  text-align: center;
-  white-space: nowrap;
-}
-
-/* first column slightly wider */
-#emg2qwerty-results .simple-table th:first-child,
-#emg2qwerty-results .simple-table td:first-child {
-  width: 44%;
-}
-
-/* Side-by-side images, smaller, centered */
-#emg2qwerty-results .results-figrow {
-  display: flex;
-  justify-content: center;
-  gap: 18px;
-  flex-wrap: wrap;
-  margin-top: 1rem;
-}
-
-#emg2qwerty-results .results-fig {
-  width: min(260px, 80vw);
-}
-
-
-#emg2qwerty-results .results-fig img {
-  width: 100%;
-  height: auto;
-  border-radius: 12px;
-  display: block;
-}
-
-/* Tighten heading spacing */
-#emg2qwerty-results .title {
-  margin-bottom: 0.5rem !important;
-}
