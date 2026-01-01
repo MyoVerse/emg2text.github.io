@@ -233,6 +233,37 @@ section.formal-serif * {
   margin: 0 auto;
 }
 
+/* ============================
+   Simple tables: add grid lines
+============================ */
+
+.simple-table {
+  border-collapse: collapse;       /* key: makes single grid lines */
+  border-spacing: 0;
+  border: 1px solid #cfcfcf;       /* outer border */
+}
+
+.simple-table th,
+.simple-table td {
+  border: 1px solid #cfcfcf;       /* cell grid lines */
+  padding: 10px 12px;
+  text-align: center;
+  vertical-align: middle;
+}
+
+/* left-align first column (optional, looks nicer for "Model") */
+.simple-table th:first-child,
+.simple-table td:first-child {
+  text-align: left;
+}
+
+/* header styling */
+.simple-table thead th {
+  background: #fafafa;
+  font-weight: 600;
+}
+
+
 /* Make the figure row a centered flex row */
 #emg2qwerty-results .results-figrow{
   display: flex;
